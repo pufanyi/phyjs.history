@@ -14,7 +14,7 @@ int main()
 		for(int j = 1; j <= 10; ++j)
 			fout << "\'air\', ";
 		for(int j = 11; j <= 50; ++j)
-			fout << ((rand() % 10) ? "\'air\', " : "\'block\', ");
+			fout << ((rand() % 7) ? "\'air\', " : "\'block\', ");
 		for(int j = 50; j < 60; ++j)
 			fout << "\'air\', ";
 		fout << "\'air\'],";
