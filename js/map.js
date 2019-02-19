@@ -102,6 +102,7 @@ function Map(){
 		['air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'block', 'air', 'air', 'block', 'air', 'air', 'block', 'block', 'block', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'block', 'block', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air', 'air'],
 		['trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap', 'trap'],
 		['block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block', 'block'],
+	]
 	function check(x,y){
 		return x>=0&&x<map.length&&y>=0&&y<map[x].length;
 	}
