@@ -10,25 +10,36 @@ int main()
 	ofstream fout("map.out");
 	for(int i = 1; i <= 100; ++i)
 	{
-		fout << "[";
-		fout << "\'block\', ";
-		for(int j = 1; j <= 10; ++j)
+		fout << "[\'block\', ";
+		if(i == 98)
+			fout << "\'block\', ";
+		else
+			fout << "\'air\', ";
+		if(i <= 93 || i >= 98)
+			fout << "\'block\', ";
+		else
 			fout << "\'air\', ";
 		for(int j = 11; j <= 50; ++j)
 			fout << ((rand() % 6) ? "\'air\', " : "\'block\', ");
-		for(int j = 50; j <= 60; ++j)
+		if(i <= 93 || i >= 98)
+			fout << "\'block\', ";
+		else
+			fout << "\'air\', ";
+		if(i == 98)
+			fout << "\'block\', ";
+		else
 			fout << "\'air\', ";
 		fout << "\'block\'],";
 		fout << '\n';
 	}
 	fout << "[";
 	fout << "\'block\', ";
-	for(int i = 0; i <= 60; ++i)
+	for(int i = 0; i <= 43; ++i)
 		fout << "\'trap\', ";
 	fout << "\'block\'],";
 	fout << '\n';
 	fout << "[";
-	for(int i = 1; i <= 62; ++i)
+	for(int i = 1; i <= 45; ++i)
 		fout << "\'block\', ";
 	fout << "\'block\'],";
 	fout << '\n';
