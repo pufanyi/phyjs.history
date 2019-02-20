@@ -19,12 +19,12 @@ int main()
 			fout << "\'block\', ";
 		else
 			fout << "\'air\', ";
-		if(i <= 30)
+		if(i <= 20)
 		{
 			for(int j = 11; j <= 50; ++j)
 				fout << ((rand() % 3) ? "\'air\', " : "\'block\', ");
 		}
-		else if(i <= 60)
+		else if(i <= 40)
 		{
 			for(int j = 11; j <= 50; ++j)
 			{
@@ -37,10 +37,15 @@ int main()
 					fout << "\'trap\', ";
 			}
 		}
+		else if(i <= 20)
+		{
+			for(int j = 11; j <= 50; ++j)
+				fout << ((rand() % 7) ? "\'air\', " : "\'block\', ");
+		}
 		else
 		{
 			for(int j = 11; j <= 50; ++j)
-				fout << ((rand() % 6) ? "\'air\', " : "\'block\', ");
+				fout << ((rand() % 5) ? "\'air\', " : "\'block\', ");
 		}
 		if(i <= 93 || i >= 98)
 			fout << "\'block\', ";
