@@ -7,4 +7,6 @@ Just for test.
 
 Enjoy yourself.
 
-纯属抄[yyhhenry](https://github.com/yyhhenry)的代码。
+Copying from [yyhhenry](https://github.com/yyhhenry).
+
+There are a lot of bugs.
