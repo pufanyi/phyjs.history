@@ -1,4 +1,5 @@
 'use strict';
+let lastFreshTime;
 function min(a,b){
 	if(a<b){
 		return a;
@@ -17,7 +18,7 @@ function Camera(_character,_canvas){
 	let character=_character;
 	let canvas=_canvas;
 	
-	let extraWidth=10;
+	let extraWidth=30;
 	let extraHeight=extraWidth/canvas.getWidth()*canvas.getHeight();
 	
 	let left=character.getLeft()-extraWidth;
@@ -83,6 +84,21 @@ function Canvas(_document){
 		for(let i=0;i<entityList.length;i++){
 			entityList[i].paint(this,camera);
 		}
+		let fps=1000/(new Date().getTime()-lastFreshTime);
+		let levelColor;
+		if(fps<=2){
+			levelColor='red';
+		}else if(fps<6){
+			levelColor='yellow';
+		}else{
+			levelColor='green';
+		}
+		fps=(''+fps).split('.');
+		this.addText(fps[0],0,0,5,16,levelColor,'微软雅黑',3);
+		if(fps.length>1){
+			this.addText('    .'+fps[1],32,0,100,16,levelColor,'微软雅黑',3);
+		}
+		lastFreshTime=new Date().getTime();
 	}
 	this.getWidth=function(){
 		return width;
@@ -158,7 +174,7 @@ function Character(_name,_colorOfName,_left,_top,_width,_height){
 		}else{
 			canvas.addImage('./img/loser.png',srcX,srcY,srcWidth,srcHeight,1);
 		}
-		canvas.addText(name,srcX-srcWidth/2,srcY-srcHeight/3,srcWidth*2,srcHeight/6,_colorOfName,'Consolas',2);
+		canvas.addText(name,srcX-canvas.getWidth(),srcY-max(20,srcHeight/3),canvas.getWidth()*2,srcHeight/6,_colorOfName,'Consolas',2);
 	}
 	
 	
@@ -389,7 +405,7 @@ function main(){
 	];
 	let map=new Map();
 	let canvas=new Canvas(document);
-	
+	lastFreshTime=new Date().getTime();
 	setInterval(function(){
 		let entityList=map.makeEntityList();
 		for(let i=0;i<characterList.length;i++){
